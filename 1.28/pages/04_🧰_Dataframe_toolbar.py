@@ -21,7 +21,7 @@ st.set_page_config("Toolbar for dataframes demo", "🧰", layout="wide")
 icon("🧰")
 
 st.title("Toolbar for dataframes demo", anchor=False)
-st.write("Check out the new toolbar on top of `st.dataframe` and `st.data_editor` that lets you add and delete rows, download your data as a CSV, and search your data. Learn more about [`st.dataframe`](https://docs.streamlit.io/) and [`st.data_editor.`](https://docs.streamlit.io/) (TODO: update links once live)")
+st.write("Check out the new toolbar on top of `st.dataframe` and `st.data_editor` that lets you add and delete rows, download your data as a CSV, and search your data. Check out our [updated Dataframes guide](https://docs.streamlit.io/library/advanced-features/dataframes).")
 
 tab1, tab2, tab3 = st.tabs([
     "🚣‍♀️ Add and delete rows", 
@@ -44,24 +44,21 @@ data = pd.DataFrame(
     }
 )
 with tab1:
-    # st.info('Now you can add and delete rows in `st.data_editor` and `st.dataframe`.', icon="ℹ️")
-    file_url = get_file_url('1.28/pages/add_delete.gif')
+    file_url = get_file_url('/mount/src/release-demos/1.28/pages/add_delete.gif')
     st.markdown(
         f'<img src="data:image/gif;base64,{file_url}" width=1000 alt="demo gif">',
         unsafe_allow_html=True,
     )
 
 with tab2:
-    # st.info('Download your data as a CSV file.', icon="ℹ️")
-    file_url = get_file_url('1.28/pages/download.gif')
+    file_url = get_file_url('/mount/src/release-demos/1.28/pages/download.gif')
     st.markdown(
         f'<img src="data:image/gif;base64,{file_url}" width=1000 alt="demo gif">',
         unsafe_allow_html=True,
     )
 
 with tab3:
-    # st.info('Search through your data.', icon="ℹ️")
-    file_url = get_file_url('1.28/pages/search.gif')
+    file_url = get_file_url('/mount/src/release-demos/1.28/pages/search.gif')
     st.markdown(
         f'<img src="data:image/gif;base64,{file_url}" width=1000 alt="demo gif">',
         unsafe_allow_html=True,
@@ -95,10 +92,6 @@ edited_data = st.data_editor(
         "priority",
     ),
 )
-
-# with st.expander("Edited Data"):
-#     "This is the dataframe returned by the data editor:"
-#     st.dataframe(edited_data, use_container_width=True)
 
 st.code(
     """
